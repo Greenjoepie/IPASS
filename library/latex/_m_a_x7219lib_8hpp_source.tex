@@ -1,0 +1,43 @@
+\hypertarget{_m_a_x7219lib_8hpp_source}{}\doxysection{MAX7219lib.\+hpp}
+\mbox{\hyperlink{_m_a_x7219lib_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{2 \textcolor{comment}{//          Copyright Mathijs Koek 2022.}}
+\DoxyCodeLine{3 \textcolor{comment}{// Distributed under the Boost Software License, Version 1.0.}}
+\DoxyCodeLine{4 \textcolor{comment}{//    (See accompanying file LICENSE\_1\_0.txt or copy at}}
+\DoxyCodeLine{5 \textcolor{comment}{//          https://www.boost.org/LICENSE\_1\_0.txt)}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}hwlib.hpp"{}}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <cstring>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifndef MAX7219LIB\_HPP}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define MAX7219LIB\_HPP}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{13 }
+\DoxyCodeLine{20 \textcolor{keyword}{class }\mbox{\hyperlink{class_m_a_x7219lib}{MAX7219lib}} \{}
+\DoxyCodeLine{21 \textcolor{keyword}{private}:}
+\DoxyCodeLine{22     hwlib::spi\_bus\_bit\_banged\_sclk\_mosi\_miso\& spi\_bus;}
+\DoxyCodeLine{23     hwlib::target::pin\_out\& cs;}
+\DoxyCodeLine{24     \textcolor{keywordtype}{int} width, height;}
+\DoxyCodeLine{25     \textcolor{keywordtype}{int} matrixamount = width * height;}
+\DoxyCodeLine{26     \textcolor{keywordtype}{bool} grid[16][16] = \{\};}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28     \textcolor{keywordtype}{void} drawRow(\textcolor{keywordtype}{int} y, \textcolor{keywordtype}{int} data, \textcolor{keywordtype}{int} targetmatrix = 1);}
+\DoxyCodeLine{29     \textcolor{keywordtype}{void} flushOne(\textcolor{keywordtype}{int} targetx, \textcolor{keywordtype}{int} targety, \textcolor{keywordtype}{int} targetmatrix);}
+\DoxyCodeLine{30 \textcolor{keyword}{public}:}
+\DoxyCodeLine{31     \mbox{\hyperlink{class_m_a_x7219lib_aac2e2955f0fa7338e7df1a2ff71dd863}{MAX7219lib}}(hwlib::spi\_bus\_bit\_banged\_sclk\_mosi\_miso\& spi\_bus, hwlib::target::pin\_out\& cs, \textcolor{keywordtype}{int} width, \textcolor{keywordtype}{int} height);}
+\DoxyCodeLine{32     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_m_a_x7219lib_adcbbc91ca69c80b2ebd3c8cb661bb9b3}{write}}(\textcolor{keywordtype}{int} regaddr, \textcolor{keywordtype}{int} data, hwlib::spi\_bus::spi\_transaction\& transaction);}
+\DoxyCodeLine{33     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_m_a_x7219lib_a1c21b77bf27df958a51b77960d19e1a2}{writeSet}}(\textcolor{keywordtype}{int} regaddr, \textcolor{keywordtype}{int} data);}
+\DoxyCodeLine{34     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_m_a_x7219lib_a0b912ee402e228f14e17a3c098c69485}{no\_op}}(\textcolor{keywordtype}{int} repeat);}
+\DoxyCodeLine{35     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_m_a_x7219lib_a35d1ce9430efd450034ef83146fcf9e1}{setBrightness}}(\textcolor{keywordtype}{int} data);}
+\DoxyCodeLine{36     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_m_a_x7219lib_ae442ef7c4699cacc8fdad2616fbecae1}{setPixel}}(\textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y, \textcolor{keywordtype}{bool} value = 1);}
+\DoxyCodeLine{37     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_m_a_x7219lib_aadf2a49d94fa9be802ec3de19dfce2a9}{getPixel}}(\textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y);}
+\DoxyCodeLine{38     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_m_a_x7219lib_a9651ebed90c269ecad1f56d1955bf98f}{setRectangle}}(\textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} end\_x, \textcolor{keywordtype}{int} y, \textcolor{keywordtype}{int} end\_y, \textcolor{keywordtype}{bool} value = 1);}
+\DoxyCodeLine{39     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_m_a_x7219lib_a3222d3209628661a20caa1cc3a8ecc54}{clean}}();}
+\DoxyCodeLine{40     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_m_a_x7219lib_a9da4f38123e6178ac00b46410e5397ca}{clear}}();}
+\DoxyCodeLine{41     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_m_a_x7219lib_a894d2e0c4b2543e813c1cddf581363c0}{flush}}();}
+\DoxyCodeLine{42 \};}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//MAX7219LIB\_HPP}}
+
+\end{DoxyCode}

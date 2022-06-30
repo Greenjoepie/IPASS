@@ -1,0 +1,163 @@
+\hypertarget{class_m_a_x7219lib}{}\doxysection{MAX7219lib Class Reference}
+\label{class_m_a_x7219lib}\index{MAX7219lib@{MAX7219lib}}
+
+
+\mbox{\hyperlink{class_m_a_x7219lib}{MAX7219lib}} class.  
+
+
+
+
+{\ttfamily \#include $<$MAX7219lib.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_m_a_x7219lib_aac2e2955f0fa7338e7df1a2ff71dd863}{MAX7219lib}} (hwlib\+::spi\+\_\+bus\+\_\+bit\+\_\+banged\+\_\+sclk\+\_\+mosi\+\_\+miso \&spi\+\_\+bus, hwlib\+::target\+::pin\+\_\+out \&cs, int width, int height)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_m_a_x7219lib}{MAX7219lib}} constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_m_a_x7219lib_adcbbc91ca69c80b2ebd3c8cb661bb9b3}{write}} (int regaddr, int data, hwlib\+::spi\+\_\+bus\+::spi\+\_\+transaction \&transaction)
+\begin{DoxyCompactList}\small\item\em Write function without sending data. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_m_a_x7219lib_a1c21b77bf27df958a51b77960d19e1a2}{write\+Set}} (int regaddr, int data)
+\begin{DoxyCompactList}\small\item\em Write function with sending data. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_m_a_x7219lib_a0b912ee402e228f14e17a3c098c69485}{no\+\_\+op}} (int repeat)
+\begin{DoxyCompactList}\small\item\em Send no\+\_\+op command. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_m_a_x7219lib_a35d1ce9430efd450034ef83146fcf9e1}{set\+Brightness}} (int data)
+\begin{DoxyCompactList}\small\item\em Set brightness of the matrix. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_m_a_x7219lib_ae442ef7c4699cacc8fdad2616fbecae1}{set\+Pixel}} (int x, int y, bool value=1)
+\begin{DoxyCompactList}\small\item\em Set pixel in the grid. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_m_a_x7219lib_aadf2a49d94fa9be802ec3de19dfce2a9}{get\+Pixel}} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Get pixel from grid. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_m_a_x7219lib_a9651ebed90c269ecad1f56d1955bf98f}{set\+Rectangle}} (int x, int end\+\_\+x, int y, int end\+\_\+y, bool value=1)
+\begin{DoxyCompactList}\small\item\em Set rectangle in the grid. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_m_a_x7219lib_a3222d3209628661a20caa1cc3a8ecc54}{clean}} ()
+\begin{DoxyCompactList}\small\item\em Reset grid array to be empty. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_m_a_x7219lib_a9da4f38123e6178ac00b46410e5397ca}{clear}} ()
+\begin{DoxyCompactList}\small\item\em Reset grid and matrices to be empty. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_m_a_x7219lib_a894d2e0c4b2543e813c1cddf581363c0}{flush}} ()
+\begin{DoxyCompactList}\small\item\em Updates all matrices. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{class_m_a_x7219lib}{MAX7219lib}} class. 
+
+This class is used to operate an up to 2x2 grid of LED matrices powered by the MAX7219 chip. It has the ability to set a single pixel or a rectangle of pixels on the display, or clear it entirely. While compatible with smaller grids, it is intended to be used with a 2x2 grid. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_m_a_x7219lib_aac2e2955f0fa7338e7df1a2ff71dd863}\label{class_m_a_x7219lib_aac2e2955f0fa7338e7df1a2ff71dd863}} 
+\index{MAX7219lib@{MAX7219lib}!MAX7219lib@{MAX7219lib}}
+\index{MAX7219lib@{MAX7219lib}!MAX7219lib@{MAX7219lib}}
+\doxysubsubsection{\texorpdfstring{MAX7219lib()}{MAX7219lib()}}
+{\footnotesize\ttfamily MAX7219lib\+::\+MAX7219lib (\begin{DoxyParamCaption}\item[{hwlib\+::spi\+\_\+bus\+\_\+bit\+\_\+banged\+\_\+sclk\+\_\+mosi\+\_\+miso \&}]{spi\+\_\+bus,  }\item[{hwlib\+::target\+::pin\+\_\+out \&}]{cs,  }\item[{int}]{width,  }\item[{int}]{height }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_m_a_x7219lib}{MAX7219lib}} constructor. 
+
+The constructor for the \mbox{\hyperlink{class_m_a_x7219lib}{MAX7219lib}} class. It requires an spi\+\_\+bus and a chip select pin setup from the Arduino Due. It also requires the values equivalent to the width and height of your LED matrix grid. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_m_a_x7219lib_a3222d3209628661a20caa1cc3a8ecc54}\label{class_m_a_x7219lib_a3222d3209628661a20caa1cc3a8ecc54}} 
+\index{MAX7219lib@{MAX7219lib}!clean@{clean}}
+\index{clean@{clean}!MAX7219lib@{MAX7219lib}}
+\doxysubsubsection{\texorpdfstring{clean()}{clean()}}
+{\footnotesize\ttfamily void MAX7219lib\+::clean (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Reset grid array to be empty. 
+
+This function uses memset to fill the grid array with 0s, resetting it. This does not update the screen. \mbox{\Hypertarget{class_m_a_x7219lib_a9da4f38123e6178ac00b46410e5397ca}\label{class_m_a_x7219lib_a9da4f38123e6178ac00b46410e5397ca}} 
+\index{MAX7219lib@{MAX7219lib}!clear@{clear}}
+\index{clear@{clear}!MAX7219lib@{MAX7219lib}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily void MAX7219lib\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Reset grid and matrices to be empty. 
+
+This function functions the same as \mbox{\hyperlink{class_m_a_x7219lib_a3222d3209628661a20caa1cc3a8ecc54}{clean()}}, but it also turns off all pixels on the matrices. \mbox{\Hypertarget{class_m_a_x7219lib_a894d2e0c4b2543e813c1cddf581363c0}\label{class_m_a_x7219lib_a894d2e0c4b2543e813c1cddf581363c0}} 
+\index{MAX7219lib@{MAX7219lib}!flush@{flush}}
+\index{flush@{flush}!MAX7219lib@{MAX7219lib}}
+\doxysubsubsection{\texorpdfstring{flush()}{flush()}}
+{\footnotesize\ttfamily void MAX7219lib\+::flush (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Updates all matrices. 
+
+This function updates all matrices to turn on pixels according to the grid array. Nothing will appear on the matrices if this is not called. \mbox{\Hypertarget{class_m_a_x7219lib_aadf2a49d94fa9be802ec3de19dfce2a9}\label{class_m_a_x7219lib_aadf2a49d94fa9be802ec3de19dfce2a9}} 
+\index{MAX7219lib@{MAX7219lib}!getPixel@{getPixel}}
+\index{getPixel@{getPixel}!MAX7219lib@{MAX7219lib}}
+\doxysubsubsection{\texorpdfstring{getPixel()}{getPixel()}}
+{\footnotesize\ttfamily bool MAX7219lib\+::get\+Pixel (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+Get pixel from grid. 
+
+This function returns whether the pixel at (x, y) is turned on or off. \mbox{\Hypertarget{class_m_a_x7219lib_a0b912ee402e228f14e17a3c098c69485}\label{class_m_a_x7219lib_a0b912ee402e228f14e17a3c098c69485}} 
+\index{MAX7219lib@{MAX7219lib}!no\_op@{no\_op}}
+\index{no\_op@{no\_op}!MAX7219lib@{MAX7219lib}}
+\doxysubsubsection{\texorpdfstring{no\_op()}{no\_op()}}
+{\footnotesize\ttfamily void MAX7219lib\+::no\+\_\+op (\begin{DoxyParamCaption}\item[{int}]{repeat }\end{DoxyParamCaption})}
+
+
+
+Send no\+\_\+op command. 
+
+This function sends a no\+\_\+op code to the MAX7219 a repeated amount of times. This is used for copying data (like setup data) over all matrices, as just sending a no\+\_\+op code will shift the data over to the next matrix while keeping it on the current one. \mbox{\Hypertarget{class_m_a_x7219lib_a35d1ce9430efd450034ef83146fcf9e1}\label{class_m_a_x7219lib_a35d1ce9430efd450034ef83146fcf9e1}} 
+\index{MAX7219lib@{MAX7219lib}!setBrightness@{setBrightness}}
+\index{setBrightness@{setBrightness}!MAX7219lib@{MAX7219lib}}
+\doxysubsubsection{\texorpdfstring{setBrightness()}{setBrightness()}}
+{\footnotesize\ttfamily void MAX7219lib\+::set\+Brightness (\begin{DoxyParamCaption}\item[{int}]{data }\end{DoxyParamCaption})}
+
+
+
+Set brightness of the matrix. 
+
+This function sets the brightness of the MAX7219 from 0 to 16. Make sure to use the no\+\_\+op function after or else this might not apply to all matrices. \mbox{\Hypertarget{class_m_a_x7219lib_ae442ef7c4699cacc8fdad2616fbecae1}\label{class_m_a_x7219lib_ae442ef7c4699cacc8fdad2616fbecae1}} 
+\index{MAX7219lib@{MAX7219lib}!setPixel@{setPixel}}
+\index{setPixel@{setPixel}!MAX7219lib@{MAX7219lib}}
+\doxysubsubsection{\texorpdfstring{setPixel()}{setPixel()}}
+{\footnotesize\ttfamily void MAX7219lib\+::set\+Pixel (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{bool}]{value = {\ttfamily 1} }\end{DoxyParamCaption})}
+
+
+
+Set pixel in the grid. 
+
+This function sets a pixel at (x, y) to be on. A pixel can also be turned off if 0 is specified in value. \mbox{\Hypertarget{class_m_a_x7219lib_a9651ebed90c269ecad1f56d1955bf98f}\label{class_m_a_x7219lib_a9651ebed90c269ecad1f56d1955bf98f}} 
+\index{MAX7219lib@{MAX7219lib}!setRectangle@{setRectangle}}
+\index{setRectangle@{setRectangle}!MAX7219lib@{MAX7219lib}}
+\doxysubsubsection{\texorpdfstring{setRectangle()}{setRectangle()}}
+{\footnotesize\ttfamily void MAX7219lib\+::set\+Rectangle (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{end\+\_\+x,  }\item[{int}]{y,  }\item[{int}]{end\+\_\+y,  }\item[{bool}]{value = {\ttfamily 1} }\end{DoxyParamCaption})}
+
+
+
+Set rectangle in the grid. 
+
+This function sets a rectangle of pixels on the grid, starting from (x, y) and ending on (end\+\_\+x, end\+\_\+y). \mbox{\Hypertarget{class_m_a_x7219lib_adcbbc91ca69c80b2ebd3c8cb661bb9b3}\label{class_m_a_x7219lib_adcbbc91ca69c80b2ebd3c8cb661bb9b3}} 
+\index{MAX7219lib@{MAX7219lib}!write@{write}}
+\index{write@{write}!MAX7219lib@{MAX7219lib}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily void MAX7219lib\+::write (\begin{DoxyParamCaption}\item[{int}]{regaddr,  }\item[{int}]{data,  }\item[{hwlib\+::spi\+\_\+bus\+::spi\+\_\+transaction \&}]{transaction }\end{DoxyParamCaption})}
+
+
+
+Write function without sending data. 
+
+This function writes data to the MAX7219 without its own spi\+\_\+transaction. This means the data will not get read by the MAX7219 until the external spi\+\_\+transaction is destroyed. This is useful for when you want to write multiple pieces of data to a single matrix, otherwise each subsequent piece of data will instead get sent to the next matrix. \mbox{\Hypertarget{class_m_a_x7219lib_a1c21b77bf27df958a51b77960d19e1a2}\label{class_m_a_x7219lib_a1c21b77bf27df958a51b77960d19e1a2}} 
+\index{MAX7219lib@{MAX7219lib}!writeSet@{writeSet}}
+\index{writeSet@{writeSet}!MAX7219lib@{MAX7219lib}}
+\doxysubsubsection{\texorpdfstring{writeSet()}{writeSet()}}
+{\footnotesize\ttfamily void MAX7219lib\+::write\+Set (\begin{DoxyParamCaption}\item[{int}]{regaddr,  }\item[{int}]{data }\end{DoxyParamCaption})}
+
+
+
+Write function with sending data. 
+
+This function is identical to the \mbox{\hyperlink{class_m_a_x7219lib_adcbbc91ca69c80b2ebd3c8cb661bb9b3}{write()}} function except that it uses its own spi\+\_\+transaction. This is useful for when you want to setup the MAX7219 using register addresses. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_m_a_x7219lib_8hpp}{MAX7219lib.\+hpp}}\item 
+\mbox{\hyperlink{_m_a_x7219lib_8cpp}{MAX7219lib.\+cpp}}\end{DoxyCompactItemize}
